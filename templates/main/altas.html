@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+{% block title %}Menu de Ingresos{% endblock %}
+
+{% block breadcrumb %}
+    Ingresos
+{% endblock %}
+
+{% block content %}
+    <div class="">
+     <div class="row d-flex justify-content-around mt-4">
+       <a href="../alta_cliente/" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true" style='width:180px; height:50px'>Nuevo Cliente</a>
+       <a href="../alta_prop/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style='width:180px; height:50px'>Nueva Propiedad</a>
+     </div>
+     <div class="row d-flex justify-content-around mt-4">
+       <a href="../alta_visita/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style='width:180px; height:50px'>Nueva Visita</a>
+       <a href="../alta_op/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style='width:180px; height:50px'>Nueva Operacion</a>
+     </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+{% block title %}Seleccion de Rubro de Propiedad{% endblock %}
+
+{% block breadcrumb %}
+    Seleccion de Rubro
+{% endblock %}
+
+{% block content %}
+    <div class="row d-flex justify-content-around mt-4">
+       <a href="../alta_dpto/" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true" style='width:180px; height:50px'>Nuevo Depto</a>
+       <a href="../alta_casa/" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true" style='width:180px; height:50px'>Nueva Casa</a>
+   </div>
+{% endblock %}

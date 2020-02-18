@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Propiedad{% endblock %}
+
+{% block breadcrumb %}  Propiedad numero {{ propiedad.id }} {% endblock %}
+
+{% block content %}
+    <p>{{ propiedad.cliente }}</p>
+    <p>{{ propiedad}}</p>
+    <p>{{ precio.precio }}</p>
+    {% include 'includes/form.html' %}
+{% endblock %}

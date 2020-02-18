@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Nuevo Agente{% endblock %}
+
+{% block breadcrumb %}  Dar de alta un Agente{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {% include 'includes/forma_agente.html' %}
+    <button type="submit" class="btn btn-success">Crear</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Buscar Propiedad{% endblock %}
+
+{% block breadcrumb %}  Buscar Propiedades{% endblock %}
+
+
+{% block content %}
+<form method="GET">
+{{  filter.form  }}
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+<ul>
+  {% for propiedad in filter.qs %}
+    <li>
+    <a href="{%  url 'main:detalle_propiedad' propiedad.id %}">  {{ propiedad.direccion }}</a> {{ propiedad.cliente }}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

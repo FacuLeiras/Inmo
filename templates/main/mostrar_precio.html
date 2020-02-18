@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Precio{% endblock %}
+
+{% block breadcrumb %}  Precio de {{ propiedad_precio.propiedad}}{% endblock %}
+
+{% block content %}
+    <p> <a href='../../propiedad/{{propiedad_precio.propiedad.id}}'> {{ propiedad_precio.propiedad}}</a>
+        fue valuada en  {{propiedad_precio.precio}}  el {{ propiedad_precio.fecha}}</p>
+{% endblock %}

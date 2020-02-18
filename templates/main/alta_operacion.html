@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Nueva Operacion{% endblock %}
+
+{% block breadcrumb %}  Dar de alta una Operacion{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+      <div class="d-flex justify-content-around">
+        <a class="btn btn-danger" href="../altas">Volver </a>
+        <button type="submit" class="btn btn-success">Crear</button>
+      </div>
+  </form>
+{% endblock %}

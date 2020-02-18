@@ -1,0 +1,15 @@
+{% load widget_tweaks %}
+
+
+
+
+  <div class="form-row">
+      <div class="col-sm-12 col-md-6 form-group">
+        <input id="{{ form.nombre.id_for_label }}" name="{{ form.nombre.name }}" type="text" class="form-control {% if form.nombre.errors %}is-invalid{% endif %}"  placeholder="Nombre" required="" value="{{ form.nombre.value|default:'' }}" />
+
+      </div>
+      <div class="col-sm-12 col-md-6 form-group">
+        <input id="{{ form.apellido.id_for_label }}" name="{{ form.apellido.name }}" type="text" class="form-control {% if form.direccion.errors %}is-invalid{% endif %}" placeholder="Apellido" required=""  value="{{ form.apellido.value|default:'' }}" />
+      </div>
+  </div>
+

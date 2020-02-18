@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Resultado Precio{% endblock %}
+
+{% block breadcrumb %}  Buscar Precios{% endblock %}
+
+
+{% block content %}
+<form method="GET">
+{{  filter.form  }}
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+<ul>
+
+  {% for propiedad_precio in filter.qs  %}
+
+{#    {% if propiedad_precio not in lista %}#}
+{##}
+{#    {% block lista %}#}
+{#           lista.append(propiedad_precio.propiedad)#}
+{#    {% endblock %}#}
+
+    <li>
+    <a href="/graph/{{ propiedad_precio.propiedad.id }}/">{{ propiedad_precio.propiedad }}</a> facu
+    </li>
+{#    {% endif %}#}
+  {% endfor %}
+</ul>
+
+{% endblock %}

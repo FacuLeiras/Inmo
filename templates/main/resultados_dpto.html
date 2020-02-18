@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Buscar Departamento{% endblock %}
+
+{% block breadcrumb %}  Buscar Departamento{% endblock %}
+
+
+{% block content %}
+<form method="GET">
+{{  filter.form  }}
+    <div class="d-flex justify-content-around">
+         <a class="btn btn-danger" href="../buscar">Volver </a>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
+    <div class="resultados">
+    <h4>Resultados: {{ filter.qs.count }}</h4>
+        {% for dpto in filter.qs %}
+            <div class="card mb-3">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                    {% if dpto.foto %}
+                    <a href="{%  url 'main:detalle_dpto' dpto.id %}"><img src="{{ dpto.foto.url }}" class="card-img" alt="{{ dpto.direccion }}{{ dpto.numero }}{{ dpto.piso }}{{ dpto.depto }}" width="250" height="180"></a>
+                    {% else %}
+                      <a href="{%  url 'main:detalle_dpto' dpto.id %}"><img src="../../media/images/logo2.jpg" class="card-img" alt="Departamento" width="250" height="180"></a>
+                    {% endif %}
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                      <h5 class="card-title"><a href="{%  url 'main:detalle_dpto' dpto.id %}" >{{ dpto.direccion }} {{ dpto.numero }} {{ dpto.piso }} {{ dpto.depto }}</a></h5>
+                    <p class="card-text">{{dpto.descripcion}}</p>
+                    <p class="card-text"><small class="text-muted"><a href="{%  url 'main:detalleCliente' dpto.cliente.id %}" >{{ dpto.cliente }}</a></small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+         {% endfor %}
+</div>
+
+
+{% endblock %}

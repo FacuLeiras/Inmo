@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}Buscar Visitas{% endblock %}
+
+{% block breadcrumb %}  Buscar Visitas{% endblock %}
+
+
+{% block content %}
+<form method="GET">
+{{  filter.form|crispy  }}
+    <div class="d-flex justify-content-around">
+         <a class="btn btn-danger" href="../buscar">Volver </a>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+<ul>
+  {% for visita in filter.qs %}
+    <li>
+        <p> <a href='../visita/{{visita.id}}'> {{ visita}}</a></p>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

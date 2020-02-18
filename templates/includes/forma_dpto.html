@@ -1,0 +1,167 @@
+{% load widget_tweaks %}
+<div class="bloque_form">
+    <h4>Datos Generales</h4>
+  <div class="form-row" id="primero">
+      <div class="col-sm-12 col-md-6 form-group">
+          <p id="propietario"> Propietario  : {{ form.cliente }} </p>
+      </div>
+      <div class="col-sm-12 col-md-6 form-group d-flex justify-content-between">
+          <div>
+            <label> Esta en venta  <input  id="{{ form.en_venta.id_for_label }}" name="{{ form.en_venta.name  }}" type="checkbox"   > </label>
+          </div>
+          <div>
+            <label> Apto Credito  <input  id="{{ form.apto_credito.id_for_label }}" name="{{ form.apto_credito.name  }}" type="checkbox"   > </label>
+          </div>
+          <div>
+            <label> Apto Profesional  <input  id="{{ form.apto_profesional.id_for_label }}" name="{{ form.apto_profesional.name  }}" type="checkbox"   > </label>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="form-row" id="localidad">
+      <div class="col-sm-12 col-md-5 form-group">
+        <input id="{{ form.localidad.id_for_label }}" name="{{ form.localidad.name }}" type="text" class="form-control {% if form.localidad.errors %}is-invalid{% endif %}"  placeholder="Localidad" required="" value="{{ form.localidad.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-5 form-group">
+        <input id="{{ form.partido.id_for_label }}" name="{{ form.partido.name }}" type="text" class="form-control {% if form.partido.errors %}is-invalid{% endif %}" placeholder="Partido" required=""  value="{{ form.partido.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.CP.id_for_label }}" name="{{ form.CP.name }}" type="number" class="form-control {% if form.CP.errors %}is-invalid{% endif %}" placeholder="CP"   value="{{ form.CP.value|default:'' }}" />
+      </div>
+  </div>
+
+  <div class="form-row" id="direccion">
+      <div class="col-sm-12 col-md-5 form-group">
+        <input id="{{ form.direccion.id_for_label }}" name="{{ form.direccion.name }}" type="text" class="form-control {% if form.direccion.errors %}is-invalid{% endif %}"  placeholder="Direccion" required="" value="{{ form.direccion.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.numero.id_for_label }}" name="{{ form.numero.name }}" type="number" class="form-control {% if form.numero.errors %}is-invalid{% endif %}" placeholder="Altura"   value="{{ form.numero.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-5 form-group">
+        <input id="{{ form.entre.id_for_label }}" name="{{ form.entre.name }}" type="text" class="form-control {% if form.entre.errors %}is-invalid{% endif %}" placeholder="Entre calles "  value="{{ form.entre.value|default:'' }}" />
+      </div>
+  </div>
+
+  <div class="form-row" id="departamento">
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.piso.id_for_label }}" name="{{ form.piso.name }}" type="number" class="form-control {% if form.piso.errors %}is-invalid{% endif %}"  placeholder="Piso" required="" value="{{ form.piso.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.depto.id_for_label }}" name="{{ form.depto.name }}" type="text" class="form-control {% if form.depto.errors %}is-invalid{% endif %}" placeholder="Dpto"   value="{{ form.depto.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.expensas.id_for_label }}" name="{{ form.expensas.name }}" type="number" class="form-control {% if form.expensas.errors %}is-invalid{% endif %}" placeholder="Expensas "  required=""  value="{{ form.expensas.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.cant_pisos.id_for_label }}" name="{{ form.cant_pisos.name }}" type="number" class="form-control {% if form.cant_pisos.errors %}is-invalid{% endif %}" placeholder="Pisos Edificio "   value="{{ form.cant_pisos.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.cant_dptos_por_piso.id_for_label }}" name="{{ form.cant_dptos_por_piso.name }}" type="number" class="form-control {% if form.cant_dptos_por_piso.errors %}is-invalid{% endif %}" placeholder="Dptos por Piso "   value="{{ form.cant_dptos_por_piso.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.ascensores.id_for_label }}" name="{{ form.ascensores.name }}" type="number" class="form-control {% if form.ascensores.errors %}is-invalid{% endif %}" placeholder="Ascensores " required=""  value="{{ form.ascensores.value|default:'' }}" />
+      </div>
+  </div>
+</div>
+
+<div class="bloque_form">
+    <h4>Datos Edilicios</h4>
+  <div class="form-row" id="ambientes">
+      <div class="col-sm-12 col-md-3 form-group">
+        <input id="{{ form.ambientes.id_for_label }}" name="{{ form.ambientes.name }}" type="number" class="form-control {% if form.ambientes.errors %}is-invalid{% endif %}"  placeholder="Ambientes" required="" value="{{ form.ambientes.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-3 form-group">
+        <input id="{{ form.dormitorios.id_for_label }}" name="{{ form.dormitorios.name }}" type="number" class="form-control {% if form.dormitorios.errors %}is-invalid{% endif %}" placeholder="Dormitorios"   value="{{ form.dormitorios.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-3 form-group">
+        <input id="{{ form.banos.id_for_label }}" name="{{ form.banos.name }}" type="number" class="form-control {% if form.banos.errors %}is-invalid{% endif %}" placeholder="Baños " required=""  value="{{ form.banos.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-3 form-group">
+        <p id="vista">  Vista  : {{ form.vista }}  </p>
+      </div>
+  </div>
+
+  <div class="form-row" id="superficies">
+      <div class="col-sm-12 col-md-3 form-group">
+        <input id="{{ form.superficie_total.id_for_label }}" name="{{ form.superficie_total.name }}" type="number" class="form-control {% if form.superficie_total.errors %}is-invalid{% endif %}"  placeholder="Superficie Total" required="" value="{{ form.superficie_total.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-3 form-group">
+        <input id="{{ form.superficie_semicubierta.id_for_label }}" name="{{ form.superficie_semicubierta.name }}" type="number" class="form-control {% if form.superficie_semicubierta.errors %}is-invalid{% endif %}" placeholder="Superficie Semicubierta"   value="{{ form.superficie_semicubierta.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-3 form-group">
+        <input id="{{ form.superficie_cubierta.id_for_label }}" name="{{ form.superficie_cubierta.name }}" type="number" class="form-control {% if form.superficie_cubierta.errors %}is-invalid{% endif %}" placeholder="Superficie Cubierta " required=""  value="{{ form.superficie_cubierta.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-3 form-group">
+        <input id="{{ form.superficie_descubierta.id_for_label }}" name="{{ form.superficie_descubierta.name }}" type="number" class="form-control {% if form.superficie_descubierta.errors %}is-invalid{% endif %}" placeholder="Sup Descubierta " required=""  value="{{ form.superficie_descubierta.value|default:'' }}" />
+      </div>
+  </div>
+
+  <div class="form-row" id="zonif">
+      <div class="col-sm-12 col-md-3 form-group">
+        <p id="zonificacion">  Zonificacion  : {{ form.zonificacion }}  </p>
+      </div>
+      <div class="col-sm-12 col-md-3 form-group">
+        <p id="orientacion">  Orientacion  : {{ form.orientacion }}  </p>
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <label>   <input  id="{{ form.plano.id_for_label }}" name="{{ form.plano.name  }}" type="checkbox" {% if form.plano.errors %}is-invalid{% endif %}"  value="{{ form.plano.value|default:'' }}" > Plano</label>
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.antiguedad.id_for_label }}" name="{{ form.antiguedad.name }}" type="number" class="form-control {% if form.antiguedad.errors %}is-invalid{% endif %}" placeholder="Antiguedad " value="{{ form.antiguedad.value|default:'' }}" />
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        <input id="{{ form.medida_frente.id_for_label }}" name="{{ form.medida_frente.name }}" type="number" class="form-control {% if form.medida_frente.errors %}is-invalid{% endif %}" placeholder="Frente " value="{{ form.medida_frente.value|default:'' }}" />
+      </div>
+  </div>
+</div>
+
+<div class="bloque_form">
+<h4>Servicios</h4>
+  <div class="form-row" id="servicios">
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label> <input  id="{{ form.gas.id_for_label }}" name="{{ form.gas.name  }}" type="checkbox" {% if form.gas.errors %}is-invalid{% endif %}"  value="{{ form.gas.value|default:'' }}" >  Gas</label>
+      </div>
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label>  <input  id="{{ form.cloacas.id_for_label }}" name="{{ form.cloacas.name  }}" type="checkbox" {% if form.cloacas.errors %}is-invalid{% endif %}"  value="{{ form.cloacas.value|default:'' }}" > Cloacas </label>
+      </div>
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label>  <input  id="{{ form.asfalto.id_for_label }}" name="{{ form.asfalto.name  }}" type="checkbox" {% if form.asfalto.errors %}is-invalid{% endif %}"  value="{{ form.asfalto.value|default:'' }}" > Asfalto </label>
+      </div>
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label> <input  id="{{ form.agua_corriente.id_for_label }}" name="{{ form.agua_corriente.name  }}" type="checkbox" {% if form.agua_corriente.errors %}is-invalid{% endif %}"  value="{{ form.agua_corriente.value|default:'' }}" > Agua Corriente   </label>
+      </div>
+  </div>
+
+  <div class="form-row" id="checkboxes">
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label>   <input  id="{{ form.encargado.id_for_label }}" name="{{ form.encargado.name  }}" type="checkbox" {% if form.encargado.errors %}is-invalid{% endif %}"  value="{{ form.encargado.value|default:'' }}" > Encargado</label>
+      </div>
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label>  <input  id="{{ form.seguridad.id_for_label }}" name="{{ form.seguridad.name  }}" type="checkbox" {% if form.seguridad.errors %}is-invalid{% endif %}"  value="{{ form.seguridad.value|default:'' }}" > Seguridad  </label>
+      </div>
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label>   <input  id="{{ form.cochera.id_for_label }}" name="{{ form.cochera.name  }}" type="checkbox" {% if form.cochera.errors %}is-invalid{% endif %}"  value="{{ form.cochera.value|default:'' }}" > Cochcera</label>
+      </div>
+      <div class="col-sm-12 col-md-3 form-group d-flex justify-content-between">
+        <label>   <input  id="{{ form.balcon.id_for_label }}" name="{{ form.balcon.name  }}" type="checkbox" {% if form.balcon.errors %}is-invalid{% endif %}"  value="{{ form.balcon.value|default:'' }}" > Balcon</label>
+      </div>
+
+
+
+  </div>
+</div>
+<div class="bloque_form">
+    <h4>Descripción</h4>
+    <div class="col-sm-12 col-md-12 form-group">
+       <textarea placeholder="Descripción" class="boxsizingBorder" name="{{ form.descripcion.name }}"  id="{{ form.descripcion.id_for_label }}" rows="5" cols="130" ></textarea>
+    </div>
+</div>
+<div class="bloque_form">
+    <h4>Imagenes</h4>
+    <label for="file">Cargue una imagen de la propiedad   </label>
+    <div class="col-sm-10 col-md-11 form-group" id="foto">
+        <input id="id_foto " name="foto" type="file"  accept="image/*">
+    </div>
+</div>
+

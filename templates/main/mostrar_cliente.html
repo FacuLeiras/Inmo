@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Cliente Mail{% endblock %}
+
+{% block breadcrumb %}  Cliente numero {{ cliente.id }}{% endblock %}
+
+{% block content %}
+
+        <p>{{cliente}}</p>
+    {% for mail in mails %}
+        <p>{{ mail }}</p>
+    {% endfor %}
+       {% for telefono in telefonos %}
+        <p>{{ telefono }}</p>
+    {% endfor %}
+{% endblock %}

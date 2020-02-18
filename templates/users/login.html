@@ -1,0 +1,19 @@
+{% extends "main/base.html" %}
+
+
+{% block title %}Login{% endblock %}
+
+{% block breadcrumb %}       Ingresar {% endblock %}
+
+{% block content %}
+    <div class="content-section">
+            <form method="POST">
+             {% csrf_token %}
+             {% include 'includes/form.html' %}
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Login</button>
+            </div>
+        </form>
+
+    </div>
+{% endblock content %}

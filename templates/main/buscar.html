@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+{% block title %}Menu de Búsquedas{% endblock %}
+
+{% block breadcrumb %}
+    Buscar
+{% endblock %}
+
+{% block content %}
+   <div class="container" id="botones">
+    <a href="../buscar_cliente/" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true" style='width:220px; height:50px'>Buscar Cliente</a>
+      <div class="col-sm-12 col-md-1 form-group">
+      </div>
+    <a href="../buscar_propiedad/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style='width:220px; height:50px'>Buscar Propiedades</a>
+   </div>
+   </br>
+
+   <div class="container" id="botones">
+   <a href="../buscar_visita/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style='width:220px; height:50px'>Buscar Visitas</a>
+      <div class="col-sm-12 col-md-1 form-group">
+      </div>
+    <a href="../buscar_operacion/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style='width:220px; height:50px'>Buscar Operaciones</a>
+   </div>
+
+<style type="text/css">
+#botones { display: flex; justify-content: center; }
+</style>
+{% endblock %}

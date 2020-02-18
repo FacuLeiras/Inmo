@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Operacion{% endblock %}
+
+{% block breadcrumb %}  Operacion numero {{ operacion.id }}{% endblock %}
+
+{% block content %}
+    <p> <a href='../../propiedad/{{operacion.propiedad.id}}'> {{ operacion.propiedad}}</a> fue vendido por <a href='../../cliente/{{operacion.vendido_por.id}}'> {{ operacion.vendido_por}} </a>
+        a <a href='../../cliente/{{operacion.comprado_por.id}}'> {{ operacion.comprado_por}}</a> el {{ operacion.fecha }}  por {{ operacion.monto }}</p>
+{% endblock %}

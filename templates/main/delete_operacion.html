@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+<form action='.' method='POST'>{% csrf_token %}
+    <h1>Seguro quieres eliminar  "{{ operacion }}"?</h1>
+    <p><input type='submit' value='Yes' />  <a href='/'>Cancelar</a></p>
+
+</form>
+
+
+
+
+{% endblock %}

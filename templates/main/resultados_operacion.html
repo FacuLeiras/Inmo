@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Buscar Cliente{% endblock %}
+
+{% block breadcrumb %}  Buscar operacion{% endblock %}
+
+
+{% block content %}
+<form method="GET">
+{{  filter.form  }}
+    <div class="d-flex justify-content-around">
+         <a class="btn btn-danger" href="../buscar">Volver </a>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+<ul>
+  {% for operacion in filter.qs %}
+
+    <li>
+    <a href="{%  url 'main:detalle_operacion' operacion.id %}"> {{ operacion }} </a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

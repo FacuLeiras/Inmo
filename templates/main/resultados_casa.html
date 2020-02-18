@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Buscar Casa{% endblock %}
+
+{% block breadcrumb %}  Buscar Casas{% endblock %}
+
+
+{% block content %}
+<form method="GET">
+{{  filter.form  }}
+    <div class="d-flex justify-content-around">
+         <a class="btn btn-danger" href="../buscar">Volver </a>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+<ul>
+  {% for casa in filter.qs %}
+    <li>
+    <a href="{%  url 'main:detalle_casa' casa.id %}">  {{ casa.direccion }}{{ casa.numero }}</a> {{ casa.cliente }}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

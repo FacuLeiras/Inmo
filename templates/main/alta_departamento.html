@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Nuevo Departamento{% endblock %}
+
+{% block breadcrumb %}  Nuevo Departamento{% endblock %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include 'includes/forma_dpto.html' %}
+    <div class="d-flex justify-content-around">
+        <a class="btn btn-danger" href="../altas">Volver </a>
+        <button type="submit" class="btn btn-success">Crear</button>
+    </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Nueva Visita{% endblock %}
+
+{% block breadcrumb %}  Nueva visita{% endblock %}
+
+{% block content %}
+
+  <form method="post">
+    {% csrf_token %}
+    {% include 'includes/forma_visita.html' %}
+       <div class="d-flex justify-content-around">
+        <a class="btn btn-danger" href="../altas">Volver </a>
+        <button type="submit" class="btn btn-success">Crear</button>
+      </div>
+  </form>
+{% endblock %}

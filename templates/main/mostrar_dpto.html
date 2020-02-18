@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Departamento {% endblock %}
+
+{% block breadcrumb %}  Departamento numero {{ departamento.id }}{% endblock %}
+
+{% block content %}
+  <div class="form-row" id="primero">
+     <p id="propietario">  Propietario  : {{ departamento.cliente }} </p>
+      <div class="col-sm-12 col-md-1 form-group">
+      </div>
+      <div class="col-sm-12 col-md-5 form-group">
+      {{ departamento.direccion }} {{ departamento.numero }} Piso {{ departamento.piso }} Dpto {{departamento.dpto}}
+     </div>
+  </div>
+
+
+  <div class="col-sm-12 col-md-5 form-group">
+      {{ departamento.direccion }} {{ departamento.numero }} Piso {{ departamento.piso }} Dpto {{departamento.dpto}}
+  </div>
+
+  <div class="form-row" id="localidad">
+      <div class="col-sm-12 col-md-5 form-group">
+       {{ departamento.localidad}}
+      </div>
+      <div class="col-sm-12 col-md-5 form-group">
+          {{ departamento.partido }}
+      </div>
+      <div class="col-sm-12 col-md-1 form-group">
+          {{ departamento.CP }}
+      </div>
+  </div>
+  <div class="form-row" id="direccion">
+
+      <div class="col-sm-12 col-md-1 form-group">
+          {{ departamento.numero }}
+      </div>
+      <div class="col-sm-12 col-md-5 form-group">
+          {{departamento.entre}}
+      </div>
+  </div>
+
+  <div class="form-row" id="departamento">
+      <div class="col-sm-12 col-md-2 form-group">
+          {{ departamento.piso }}
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+          {{departamento.dpto}}
+      </div>
+      <div class="col-sm-12 col-md-2 form-group">
+        Expensas {{departamento.expensas}}
+      </div>
+
+
+
+
+       {% if departamento.foto %}
+         <img src='{{ departamento.foto.url }}' height="400" width="420" class="img-responsive" alt="Imagen de la Propiedad" />
+        {% endif %}
+    <p>{{ precio.precio }}</p>
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Casa {% endblock %}
+
+{% block breadcrumb %}  Casa numero {{ casa.id }}{% endblock %}
+
+{% block content %}
+    <p>{{ casa.cliente }}</p>
+        <p>{{casa}}</p>
+    <p>{{ precio.precio }}</p>
+{% endblock %}

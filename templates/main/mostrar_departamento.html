@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Departamento {% endblock %}
+
+{% block breadcrumb %}  Departamento numero {{ departamento.id }}{% endblock %}
+
+{% block content %}
+    <div class="ficha mx-3">
+     <div class="d-flex justify-content-between">
+        <div class="foto_depto">
+             {% if departamento.foto %}
+             <img src='{{ departamento.foto.url }}' class="img-responsive" alt="Imagen de la Propiedad" width="400" height="250" />
+            {% endif %}
+        </div>
+    <div class="info">
+        <h2>{{ departamento.direccion }} {{ departamento.numero }} {{ departamento.piso }} {{ departamento.depto }}</h2>
+        <p>{{ departamento.cliente }}</p>
+        <div>
+            <p>Precio: {{ precio.precio }}</p>
+        </div>
+    </div>
+    </div>
+
+        <div>
+            <h3>Info</h3>
+            <p>{{ departamento.descripcion }}</p>
+
+        </div>
+    <div>
+        <h3>Servicios</h3>
+    {% for key, item in departamento.items %}
+        {{key}} = {{item}}
+        {% endfor %}
+
+    </div>
+    </div>
+{% endblock %}

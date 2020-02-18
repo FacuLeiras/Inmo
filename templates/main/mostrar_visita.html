@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Mostrar Visita{% endblock %}
+
+{% block breadcrumb %}  Visita numero {{ visita.id }}{% endblock %}
+
+{% block content %}
+    <p> <a href='../../agente/{{visita.agente.id}}'> {{ visita.agente}}</a> visito con <a href='../../cliente/{{visita.cliente.id}}'> {{ visita.cliente}} </a>
+        <a href='../../propiedad/{{visita.propiedad.id}}'> {{ visita.propiedad}}</a> el {{ visita.fecha }} </p>
+    <p>Descripción: {{ visita.descr }}</p>
+{% endblock %}

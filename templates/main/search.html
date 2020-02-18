@@ -1,0 +1,13 @@
+ {% extends 'main/base.html' %}
+
+{% block title %}Buscar Cliente{% endblock %}
+
+{% block breadcrumb %}  Buscar un Cliente{% endblock %}
+
+{% block content %}
+  <form method="get">
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Buscar</button>
+  </form>
+{% endblock %}

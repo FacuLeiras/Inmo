@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Graficoooo{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="http://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.4.min.css"/>
+{% endblock %}
+
+{% block breadcrumb %} Se ve un grafico{% endblock %}
+
+{% block content %}
+{{ div | safe }}
+{% endblock %}
+
+{% block bokeh %}
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.4.min.js"></script>
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-tables-1.3.4.min.js"></script>
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-api-1.3.4.min.js"></script>
+    {{script | safe}}
+
+
+{% endblock %}

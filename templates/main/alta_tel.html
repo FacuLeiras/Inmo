@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Ingrese{% endblock %}
+
+{% block breadcrumb %}  Dar de alta un Telefono{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Crear</button>
+    <a href="../alta_tel/" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true">Agregar otro Telefono</a>
+    <a href="../alta_prop/" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true">Agregar Propiedad</a>
+
+  </form>
+{% endblock %}

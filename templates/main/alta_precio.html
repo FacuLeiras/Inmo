@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block title %}Nuevo Precio{% endblock %}
+
+{% block breadcrumb %}  Asignar Precio a una Propiedad{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <button type="submit" class="btn btn-success">Crear</button>
+  </form>
+{% endblock %}

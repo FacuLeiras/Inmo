@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Marilen Auge Propiedades{% endblock %}
+
+{% block breadcrumb %}  Bienvenido {% endblock %}
+
+{% block content %}
+       <div class="container" id="botones" >
+        <a href="../altas/" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true" style='width:100px; height:50px'>Ingresos</a>
+        </div>
+           </br>
+       <div class="container" id="botones">
+        <a href="../buscar/" role="button" class="btn btn-primary btn-lg active" aria-pressed="true" style='width:100px; height:50px'>Buscar</a>
+       </div>
+
+
+
+<style type="text/css">
+#botones { display: flex; justify-content: center; }
+</style>
+{% endblock %}

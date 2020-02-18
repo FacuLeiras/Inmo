@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Nueva Casa{% endblock %}
+
+{% block breadcrumb %}  Nueva Casa{% endblock %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include 'includes/forma_casa.html' %}
+    <div class="d-flex justify-content-around">
+        <a class="btn btn-danger" href="../altas">Volver </a>
+        <button type="submit" class="btn btn-success">Crear</button>
+    </div>
+
+  </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% load widget_tweaks %}
+
+  <div class="form-row">
+      <div class="col-sm-12 col-md-4 form-group">
+     <p id="propiedad">  Propiedad  : {{ form.propiedad }} </p>
+      </div>
+      <div class="col-sm-12 col-md-4 form-group">
+         <p id="cliente">  Cliente  : {{ form.cliente }} </p>
+      </div>
+      <div class="col-sm-12 col-md-4 form-group">
+          <p id="agente">  Agente  : {{ form.agente }} </p>
+      </div>
+
+    <div class='input-group date' id='datetimepicker1'>
+       <p>Fecha: </p>
+        <span class="input-group-addon">
+           <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+        {{form.fecha}}
+    </div>
+      <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+
+  <div class="col-sm-12 col-md-12 form-group">
+       <textarea placeholder="Descripción" name="{{ form.descripcion.name }}"  id="{{ form.descripcion.id_for_label }}"  rows="5" cols="100" ></textarea>
+   </div>
+    </div>

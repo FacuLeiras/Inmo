@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Buscar Visita{% endblock %}
+
+{% block breadcrumb %}  Buscar una Visita{% endblock %}
+
+{% block content %}
+  <form method="get">
+    {% csrf_token %}
+    {% include 'includes/form.html' %}
+    <div class="d-flex justify-content-around">
+        <a class="btn btn-danger" href="../buscar">Volver </a>
+    <button type="submit" class="btn btn-success">Crear</button>
+  </form>
+{% endblock %}
